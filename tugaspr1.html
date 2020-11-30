@@ -1,0 +1,27 @@
+  <!DOCTYPE html>
+  <html lang="en" dir="ltr">
+    <head>
+      <meta charset="utf-8">
+      <title></title>
+    </head>
+    <body>
+        angka 1 : <input id="val1" type="number" name="angka1"><br>
+        angka 2 : <input id="val2" type="number" name="angka2"> <br><br>
+
+        <input type="button" onclick="mff()" value="submit"> <br>
+        <p>hasil sama dengan</p>
+        <p id="hasil" style="font-weight:bold;"></p>
+        <script>
+          alert("Selamat Datang");
+          function mff(){
+            document.body.style.background = "green";
+            let no1 =document.getElementById("val1").value;
+            console.log(no1);
+            let no2 = document.getElementById("val2").value;
+            console.log(no2);
+            let res = (parseFloat(no1)+parseFloat(no2))
+            document.getElementById("hasil").innerHTML = res;
+          }
+        </script>
+    </body>
+  </html>
