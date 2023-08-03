@@ -1,0 +1,33 @@
+name: Gh-Pages
+
+on:
+  push:
+    branches: [main]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    env:
+      my_secret: ${{secrets.ACCESS_TOKEN}}
+
+    steps:
+      - uses: actions/checkout@v2 # Only works with v2
+      - uses: subosito/flutter-action@v1
+      - uses: bluefireteam/flutter-gh-pages@v7
+        with:
+          baseHref: /Karula-k.github.io/
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Copy 'web' folder to gh-pages branch
+        run: |
+          # Clear the gh-pages branch and copy the 'web' folder contents
+          git checkout gh-pages
+          git rm -rf .
+          cp -r build/web/* .
+          git add -A
+          git commit -m "Update 'web' folder"
+          git push origin gh-pages
+
+      - name: Switch back to the default branch
+        run: git checkout ${{ github.ref }}
