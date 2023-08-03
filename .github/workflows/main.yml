@@ -15,12 +15,9 @@ jobs:
       - uses: subosito/flutter-action@v1
         with:
           channel: 'stable'
-      - name: build 'web'
       - run: flutter clean
       - run: flutter pub get
       - run: flutter build web
-      
-      - name: copy 'web'
       - run: |
           cd build
           cd web-deploy
