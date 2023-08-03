@@ -13,21 +13,30 @@ jobs:
     steps:
       - uses: actions/checkout@v2 # Only works with v2
       - uses: subosito/flutter-action@v1
-      - uses: bluefireteam/flutter-gh-pages@v7
         with:
-          baseHref: /Karula-k.github.io/
-      - name: Checkout repository
-        uses: actions/checkout@v2
-
-      - name: Copy 'web' folder to gh-pages branch
-        run: |
-          # Clear the gh-pages branch and copy the 'web' folder contents
-          git checkout gh-pages
-          git rm -rf .
-          cp -r build/web .
-          git add -A
-          git commit -m "Update 'web' folder"
+          channel: 'stable'
+      - name: build 'web'
+      - run: flutter clean
+      - run: flutter pub get
+      - run: flutter build web
+      
+      - name: copy 'web'
+      - run: |
+          cd build
+          cd web-deploy
+          git config --global user.email king.waterf@gmail.com
+          git config --global user.name Karula-k
+          git config --global init.defaultBranch main
+          git init
+          git remote add origin https://${{secrets.ACCESS_TOKEN}}@github.com/Karula-k/Karula-k.github.io.git
+          git fetch origin gh-pages
+          git switch gh-pages
+          cp -R ../web/* .
+          git status
+          git add .
+          # add commit of the previous commit from main
+          echo ""
+          echo "Committing to gh-pages: ${{ github.event.head_commit.message }}"
+          echo ""
+          git commit -m "${{ github.event.head_commit.message }}"
           git push origin gh-pages
-
-      - name: Switch back to the default branch
-        run: git checkout ${{ github.ref }}
