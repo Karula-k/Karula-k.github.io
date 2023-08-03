@@ -24,7 +24,7 @@ jobs:
           # Clear the gh-pages branch and copy the 'web' folder contents
           git checkout gh-pages
           git rm -rf .
-          cp -r web/. .
+          cp -r build/web/* .
           git add -A
           git commit -m "Update 'web' folder"
           git push origin gh-pages
