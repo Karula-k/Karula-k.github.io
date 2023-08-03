@@ -8,8 +8,8 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
-    env:
-      my_secret: ${{secrets.ACCESS_TOKEN}}
+    # env:
+    #   my_secret: ${{secrets.ACCESS_TOKEN}}
 
     steps:
       - uses: actions/checkout@v2 # Only works with v2
