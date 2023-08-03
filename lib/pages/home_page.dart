@@ -134,6 +134,14 @@ class PortofolioSection extends StatelessWidget {
                     link:
                         'https://github.com/Chicken-Sense/Chicken-Sense/tree/ml-branch',
                     img: Logo.machineLearning,
+                  ),
+                  CardScroll(
+                    title: 'Porto web',
+                    subtitle: 'My porto web in flutter',
+                    content:
+                        'The portofolio of all my project hosting in github.io',
+                    link: 'https://github.com/Karula-k/Karula-k.github.io',
+                    img: Logo.flutter,
                   )
                 ],
               ),
