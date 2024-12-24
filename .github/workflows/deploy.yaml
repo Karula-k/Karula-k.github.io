@@ -30,10 +30,3 @@ jobs:
 
       - name: Build project with Next.js
         run: npm run deploy
-      - name: Push to gh-pages branch
-        run: |
-          git config --global user.name "github-actions[bot]"
-          git config --global user.email "github-actions[bot]@users.noreply.github.com"
-          git push --force --quiet "https://github.com/${{ github.repository }}" gh-pages
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
