@@ -23,6 +23,11 @@ jobs:
       - name: Install dependencies
         run: npm install
 
+      - name: Set Git identity for commits
+        run: |
+          git config --global user.name "github-actions[bot]"  # Set the bot's name
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+
       - name: Build project with Next.js
         run: npm run deploy
       - name: Push to gh-pages branch
