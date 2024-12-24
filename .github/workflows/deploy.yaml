@@ -12,14 +12,16 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v3
 
-      - name: Install Bun
+      - name: Set up Bun (if you still want Bun installed, but Next.js will not use it)
         run: curl -fsSL https://bun.sh/install | bash
 
-      - name: Set up Bun PATH
-        run: echo "$HOME/.bun/bin" >> $GITHUB_PATH
+      - name: Set up Node.js (since Next.js uses Node.js)
+        uses: actions/setup-node@v3
+        with:
+          node-version: "16"
 
       - name: Install dependencies
-        run: bun install
+        run: npm install # Use npm (or yarn) for Next.js
 
       - name: Set Environment Variables
         env:
@@ -28,8 +30,8 @@ jobs:
           echo "" > .env.local
           echo BASE_PATH=$BASE_PATH >> .env.local
 
-      - name: Build project
-        run: bun build
+      - name: Build project with Next.js
+        run: npm run build # Use Next.js' build command
 
       - name: Create .nojekyll file
         run: touch ./out/.nojekyll
