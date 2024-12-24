@@ -5,7 +5,7 @@
   "scripts": {
     "dev": "next dev --turbopack",
     "build": "next build",
-    "deploy": "next build && git add dist/ && git commit -m \"Deploy\" && git subtree push --force --prefix dist origin gh-pages",
+    "deploy": "git checkout gh-pages && git rm -rf .&& git commit -m \"Clear old deployment files\" &&  next build && git add dist/ && git commit -m \"Deploy\" && git subtree push --force --prefix dist origin gh-pages",
     "start": "next start",
     "lint": "next lint"
   },
