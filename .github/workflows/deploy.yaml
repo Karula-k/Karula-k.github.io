@@ -21,15 +21,7 @@ jobs:
           node-version: "20"
 
       - name: Install dependencies
-        run: npm instal
+        run: npm install # Use npm (or yarn) for Next.js
 
       - name: Build project with Next.js
-        run: npm run build
-
-      - name: Create .nojekyll file
-        run: touch ./out/.nojekyll
-
-      - name: Deploy to GitHub Pages
-        uses: JamesIves/github-pages-deploy-action@v4
-        with:
-          folder: out
+        run: npm run deploy
