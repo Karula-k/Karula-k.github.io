@@ -9,24 +9,32 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout
+      - name: Checkout repository
         uses: actions/checkout@v3
-      - name: Install Packages
-        uses: pnpm/action-setup@v2
-        with:
-          version: 8
-          run_install: true
+
+      - name: Install Bun
+        run: curl -fsSL https://bun.sh/install | bash
+
+      - name: Set up Bun PATH
+        run: echo "$HOME/.bun/bin" >> $GITHUB_PATH
+
+      - name: Install dependencies
+        run: bun install
+
       - name: Set Environment Variables
         env:
           BASE_PATH: /react-texteditor-example
         run: |
           echo "" > .env.local
           echo BASE_PATH=$BASE_PATH >> .env.local
-      - name: Build
-        run: pnpm run build
-      - name: Create .nojekyll
+
+      - name: Build project
+        run: bun build
+
+      - name: Create .nojekyll file
         run: touch ./out/.nojekyll
-      - name: Deploy
+
+      - name: Deploy to GitHub Pages
         uses: JamesIves/github-pages-deploy-action@v4
         with:
           folder: out
