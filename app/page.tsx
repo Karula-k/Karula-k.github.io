@@ -8,14 +8,14 @@ import {
   Link,
   Typography,
 } from "@mui/material";
-import CardWithDetail from "./components/CardWithDetail";
 import { PortfolioCardProps } from "./type/portofolioCardProps";
+import ArchlyricCard from "./components/ArchlyricCard ";
 const data: PortfolioCardProps[] = [
   {
     projectName: "Nurse APP",
     projectDate: "December 2024",
     projectDescription:
-      "This is an application aimed at nurses to digitize the first check on a patient.",
+      "This app helps nurses efficiently digitize the initial patient assessment, ensuring accuracy and streamlined care from the start.",
     image: "/images/medical-team.png",
     techStack: ["Flutter"],
     githubLink: null,
@@ -27,7 +27,7 @@ const data: PortfolioCardProps[] = [
     projectName: "Solusi Tukang",
     projectDate: "December 2024",
     projectDescription:
-      "An application to help people around Malang find home repair services.",
+      "An app to help people in Malang easily find home repair services or construction contractors & worker.",
     image: "images/solusi-tukang.png",
     techStack: ["Flutter", "GETX", "HTTP"],
     githubLink: null,
@@ -40,7 +40,7 @@ const data: PortfolioCardProps[] = [
     projectName: "Solusi Tukang Mitra",
     projectDate: "December 2024",
     projectDescription:
-      "An application to help people around Malang find home repair services.",
+      "An app that helps workers in Malang connect with customers in need of home repairs.",
     image: "/images/logo_mitra.png",
     techStack: ["Flutter", "GETX", "DIO"],
     githubLink: null,
@@ -53,9 +53,9 @@ const data: PortfolioCardProps[] = [
     projectName: "Intima",
     projectDate: "December 2024",
     projectDescription:
-      "Application for helping people around Malang find home repair services.",
+      "An app designed to help track employee of PT. Maelo Inti Trans delivery routes and movements, generate detailed reports, and manage item requests, providing a streamlined solution for efficient logistics and operations management.",
     image: "/images/logo_intima.png",
-    techStack: ["Flutter", "GETX"],
+    techStack: ["Flutter", "GETX", "HTTP"],
     githubLink: null,
     liveDemoLink: null,
     isNDA: true,
@@ -67,7 +67,7 @@ const data: PortfolioCardProps[] = [
     projectDescription:
       "Application for helping people around Malang find home repair services.",
     image: "/images/logo_ems.png",
-    techStack: ["Flutter", "GETX"],
+    techStack: ["Flutter", "GETX", "HTTP"],
     githubLink: null,
     liveDemoLink: null,
     isNDA: true,
@@ -111,7 +111,7 @@ export default function Home() {
     <>
       <Box display="flex" height="100vh">
         <Box
-          width="50%"
+          width="30%"
           position="fixed"
           display="flex"
           className="mx-12"
@@ -120,9 +120,9 @@ export default function Home() {
           height="100vh"
         >
           <Box alignItems="center" justifyContent="center">
-            <Typography variant="h6">HELLO ✌️</Typography>
-            <Typography variant="h6">
-              im irsyad im Mobile developers!
+            <Typography variant="h6">FIKRI IRSYAD! ✌️</Typography>
+            <Typography variant="body2" color="error">
+              FRONT-END DEVELOPER
             </Typography>
 
             <Typography variant="h6">Social Links</Typography>
@@ -172,7 +172,7 @@ export default function Home() {
             </Grid2>
           </Box>
         </Box>
-        <Box width="50%" sx={{ marginLeft: "50%" }}>
+        <Box width="70%" sx={{ marginLeft: "30%" }}>
           <Card className="mx-12 my-4">
             <CardContent>
               <Typography variant="h6">Languages and Frameworks</Typography>
@@ -185,37 +185,32 @@ export default function Home() {
               </ul>
             </CardContent>
           </Card>
-
-          {/* Featured Projects Section */}
           <PortfolioHeader
             title="Featured Projects"
             subtitle="Here are a few projects I’ve worked on, showcasing my front-end and back-end skills."
           />
-          <Card className="mx-12 my-4">
-            <CardContent>
-              <Grid2 container spacing={2}>
-                {data.length === 0 ? (
-                  <Typography>No projects available</Typography>
-                ) : (
-                  data.map((project, index) => (
-                    <Grid2 key={index}>
-                      <CardWithDetail
-                        projectName={project.projectName}
-                        projectDate={project.projectDate}
-                        projectDescription={project.projectDescription}
-                        image={project.image}
-                        techStack={project.techStack}
-                        githubLink={project.githubLink}
-                        liveDemoLink={project.liveDemoLink}
-                        type={project.type}
-                        isNDA={project.isNDA}
-                      />
-                    </Grid2>
-                  ))
-                )}
-              </Grid2>
-            </CardContent>
-          </Card>
+
+          <Grid2 container spacing={2}>
+            {data.length === 0 ? (
+              <Typography>No projects available</Typography>
+            ) : (
+              data.map((project, index) => (
+                <Grid2 key={index}>
+                  <ArchlyricCard
+                    projectName={project.projectName}
+                    projectDate={project.projectDate}
+                    projectDescription={project.projectDescription}
+                    image={project.image}
+                    techStack={project.techStack}
+                    githubLink={project.githubLink}
+                    liveDemoLink={project.liveDemoLink}
+                    type={project.type}
+                    isNDA={project.isNDA}
+                  />
+                </Grid2>
+              ))
+            )}
+          </Grid2>
         </Box>
       </Box>
     </>

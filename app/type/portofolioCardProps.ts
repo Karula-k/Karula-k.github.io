@@ -7,5 +7,5 @@ export interface PortfolioCardProps {
   githubLink: string | null;
   liveDemoLink: string | null;
   isNDA?: boolean;  
-  type: "FE" | "BE" | "ML";
+  type: string;
 }
