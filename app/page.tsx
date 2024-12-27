@@ -207,7 +207,7 @@ export default function Home() {
             </Typography>
           </div>
 
-          <Box px={6}>
+          <Box>
             <Typography
               fontWeight={"bold"}
               paddingY={2}
@@ -248,7 +248,7 @@ export default function Home() {
               />
             </Box>
           </Box>
-          <Box px={4}>
+          <Box>
             <Typography
               fontWeight={"bold"}
               paddingY={2}
@@ -270,7 +270,7 @@ export default function Home() {
                 ))}
             </Box>
           </Box>
-          <Box px={4} paddingTop={4}>
+          <Box paddingTop={4}>
             <Typography fontWeight={"bold"} variant="h6" color="info">
               PROJECTS
             </Typography>
