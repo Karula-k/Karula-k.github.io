@@ -1,15 +1,9 @@
 "use client";
-import {
-  Box,
-  Card,
-  CardContent,
-  CardMedia,
-  Grid2,
-  Link,
-  Typography,
-} from "@mui/material";
+import { Box, CardMedia, Grid2, Link, Typography } from "@mui/material";
 import { PortfolioCardProps } from "./type/portofolioCardProps";
-import ArchlyricCard from "./components/ArchlyricCard ";
+import ArchlyricCard from "./components/ArchlyricCard";
+import BasicCard from "./components/BasicCard";
+import { SkillsCard } from "./type/skiillsCards";
 const data: PortfolioCardProps[] = [
   {
     projectName: "Nurse APP",
@@ -21,7 +15,7 @@ const data: PortfolioCardProps[] = [
     githubLink: null,
     liveDemoLink: null,
     isNDA: true,
-    type: "FE",
+    type: "Flutter  ",
   },
   {
     projectName: "Solusi Tukang",
@@ -34,7 +28,7 @@ const data: PortfolioCardProps[] = [
     liveDemoLink:
       "https://play.google.com/store/apps/details?id=com.solusiciptamedia.solusitukang",
     isNDA: true,
-    type: "FE",
+    type: "Flutter  ",
   },
   {
     projectName: "Solusi Tukang Mitra",
@@ -47,19 +41,19 @@ const data: PortfolioCardProps[] = [
     liveDemoLink:
       "https://play.google.com/store/apps/details?id=com.solusiciptamedia.mitrasolusitukang",
     isNDA: true,
-    type: "FE",
+    type: "Flutter  ",
   },
   {
     projectName: "Intima",
     projectDate: "December 2024",
     projectDescription:
-      "An app designed to help track employee of PT. Maelo Inti Trans delivery routes and movements, generate detailed reports, and manage item requests, providing a streamlined solution for efficient logistics and operations management.",
+      "An app designed to help track employee of PT. Maelo Inti Trans delivery routes and movements, generate detailed reports, and manage item requests.",
     image: "/images/logo_intima.png",
     techStack: ["Flutter", "GETX", "HTTP"],
     githubLink: null,
     liveDemoLink: null,
     isNDA: true,
-    type: "FE",
+    type: "Flutter  ",
   },
   {
     projectName: "EMS",
@@ -71,7 +65,7 @@ const data: PortfolioCardProps[] = [
     githubLink: null,
     liveDemoLink: null,
     isNDA: true,
-    type: "FE",
+    type: "Flutter  ",
   },
   {
     projectName: "Solusi Pos",
@@ -83,29 +77,37 @@ const data: PortfolioCardProps[] = [
     githubLink: null,
     liveDemoLink: null,
     isNDA: true,
-    type: "FE",
+    type: "Flutter  ",
   },
 ];
 
-// Reusable CardHeader component
-const PortfolioHeader = ({
-  title,
-  subtitle,
-}: {
-  title: string;
-  subtitle?: string;
-}) => (
-  <Card className="mx-12 my-4">
-    <CardContent>
-      <Typography variant="h4">{title}</Typography>
-      {subtitle && (
-        <Typography variant="body1" sx={{ mt: 1 }}>
-          {subtitle}
-        </Typography>
-      )}
-    </CardContent>
-  </Card>
-);
+const skills: SkillsCard[] = [
+  {
+    altName: "Flutter",
+    image: "icon/icon_flutter.png",
+  },
+  {
+    altName: "Typescript",
+    image: "icon/typescript.png",
+  },
+  {
+    altName: "React",
+    image: "icon/React-icon.svg.png",
+  },
+  {
+    altName: "Prisma",
+    image: "icon/prisma.png",
+  },
+  {
+    altName: "Rust",
+    image: "icon/rust.png",
+  },
+  {
+    altName: "Python",
+    image: "icon/python.png",
+  },
+];
+
 export default function Home() {
   return (
     <>
@@ -173,24 +175,107 @@ export default function Home() {
           </Box>
         </Box>
         <Box width="70%" sx={{ marginLeft: "30%" }}>
-          <Card className="mx-12 my-4">
-            <CardContent>
-              <Typography variant="h6">Languages and Frameworks</Typography>
-              <ul>
-                <li>Flutter GET X</li>
-                <li>Flutter Provider</li>
-                <li>Flutter</li>
-                <li>Flutter DIO</li>
-                <li>Flutter HTTP</li>
-              </ul>
-            </CardContent>
-          </Card>
-          <PortfolioHeader
-            title="Featured Projects"
-            subtitle="Here are a few projects I’ve worked on, showcasing my front-end and back-end skills."
-          />
+          <div className="px-12">
+            <Typography
+              fontWeight={"bold"}
+              paddingBottom={2}
+              variant="h6"
+              color="success"
+            >
+              INTRODUCTION
+            </Typography>
 
-          <Grid2 container spacing={2}>
+            <Typography>
+              A graduate in <span style={{ color: "green" }}>Informatics</span>{" "}
+              with <span style={{ color: "green" }}>one year</span> of
+              experience as a Frontend Developer using
+              <span style={{ color: "green" }}> Dart</span> and
+              <span style={{ color: "green" }}> Flutter</span>
+              ,skilled in developing efficient and user-friendly mobile
+              applications. Focused on cross-team collaboration with backend and
+              UI/UX teams to create responsive UI. Experienced in
+              <span style={{ color: "red" }}> Firebase </span>
+              notifications, uploading signed images to{" "}
+              <span style={{ color: "red" }}>Google Cloud</span>, and
+              integrating
+              <span style={{ color: "red" }}> Google Maps and Geocoding</span>.
+              hand on with <span style={{ color: "green" }}> GetX</span>,
+              <span style={{ color: "green" }}> Riverpod </span>, &{" "}
+              <span style={{ color: "green" }}> Provider </span>
+              Proficient in slicing Figma designs and transforming them into
+              consistent themes and typography to enhance user experience.
+            </Typography>
+          </div>
+
+          <Box px={6}>
+            <Typography
+              fontWeight={"bold"}
+              paddingY={2}
+              variant="h6"
+              color="info"
+            >
+              EXPERIENCE
+            </Typography>
+            <Box
+              display={"flex"}
+              flexDirection={"row"}
+              gap={2}
+              flexWrap={"wrap"}
+            >
+              <BasicCard
+                title={"Solusi Cipta Media (Internship)"}
+                description={
+                  "As an intern, I have had the opportunity to learn a great deal, particularly when it comes to structuring Flutter applications and utilizing GetX for state management. Throughout my experience, I have gained a deeper understanding of Flutter's widget-based architecture, and I’ve learned how to efficiently organize and structure the code to ensure scalability and maintainability."
+                }
+                subtitle={"March 2024 -  June 2024"}
+                listString={["icon/icon_flutter.png", "icon/getx.png"]}
+              />
+              <BasicCard
+                title={"Solusi Cipta Media"}
+                description={
+                  "In addition to working with Flutter, I gained experience managing development dev servers using cPanel, where I handled domains, databases, and troubleshooting. I also help maintained CI/CD pipelines with tools GitHub Actions, automating build, lint testing, and deployment processes. Furthermore, I learned Nextjs with TypeScript and React, improving my skills in writing clean, maintainable code and managing state in web applications. This experience broadened my ability to develop both mobile and web applications efficiently."
+                }
+                subtitle={"July 2024 -  January 2025"}
+                listString={[
+                  "icon/icon_flutter.png",
+                  "icon/getx.png",
+                  "icon/typescript.png",
+                  "icon/React-icon.svg.png",
+                  "icon/prisma.png",
+                  "icon/riverpod.png",
+                  "icon/termius-logo.png",
+                ]}
+              />
+            </Box>
+          </Box>
+          <Box px={4}>
+            <Typography
+              fontWeight={"bold"}
+              paddingY={2}
+              variant="h6"
+              color="success"
+            >
+              INTEREST
+            </Typography>
+            <Box display={"flex"} flexDirection={"row"} gap={2}>
+              {skills &&
+                skills.map((e, index) => (
+                  <CardMedia
+                    key={index}
+                    component="img"
+                    sx={{ height: "48px", width: "48px", objectFit: "contain" }}
+                    image={e.image}
+                    alt={e.altName}
+                  />
+                ))}
+            </Box>
+          </Box>
+          <Box px={4} paddingTop={4}>
+            <Typography fontWeight={"bold"} variant="h6" color="info">
+              PROJECTS
+            </Typography>
+          </Box>
+          <Grid2 container spacing={4}>
             {data.length === 0 ? (
               <Typography>No projects available</Typography>
             ) : (

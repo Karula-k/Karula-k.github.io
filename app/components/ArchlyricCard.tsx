@@ -25,6 +25,13 @@ const ArchlyricCard = ({
           boxShadow: "0 4px 6px rgba(0, 0, 0, 0.1)",
           padding: "1rem",
           maxWidth: "600px",
+          maxHeight: {
+            xs: "none",
+            sm: "none",
+            md: "200px",
+            lg: "200px",
+            xl: "200px",
+          },
           backgroundColor: "transparent",
           transition: "transform 0.3s ease, background-image 0.3s ease",
           width: "100%",
@@ -35,9 +42,7 @@ const ArchlyricCard = ({
         }}
       >
         <CardContent>
-          <Typography className="text-2xl font-cursive text-green-700 mb-4">
-            {type}
-          </Typography>
+          <Typography className=" text-green-700 mb-4">{type}</Typography>
           <Box display="flex" flexDirection="row" alignItems="flex-start">
             <CardMedia
               component="img"
