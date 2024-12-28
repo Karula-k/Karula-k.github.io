@@ -59,7 +59,7 @@ const data: PortfolioCardProps[] = [
     projectName: "EMS",
     projectDate: "December 2024",
     projectDescription:
-      "Application for helping people around Malang find home repair services.",
+      "An app for  PT. atlantic alam industri to streamline internal budget loan requests, enabling quick submissions and approvals with automated workflows.",
     image: "/images/logo_ems.png",
     techStack: ["Flutter", "GETX", "HTTP"],
     githubLink: null,
@@ -71,7 +71,7 @@ const data: PortfolioCardProps[] = [
     projectName: "Solusi Pos",
     projectDate: "December 2024",
     projectDescription:
-      "Application for helping people around Malang find home repair services.",
+      "Application still in development to help ratail to process POS.",
     image: "/images/solusi_pos.png",
     techStack: ["Flutter", "Riverpod"],
     githubLink: null,
