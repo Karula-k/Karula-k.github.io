@@ -6,18 +6,6 @@ import BasicCard from "./components/BasicCard";
 import { SkillsCard } from "./type/skiillsCards";
 const data: PortfolioCardProps[] = [
   {
-    projectName: "Nurse APP",
-    projectDate: "December 2024",
-    projectDescription:
-      "This app helps nurses efficiently digitize the initial patient assessment, ensuring accuracy and streamlined care from the start.",
-    image: "/images/medical-team.png",
-    techStack: ["Flutter"],
-    githubLink: null,
-    liveDemoLink: null,
-    isNDA: true,
-    type: "Flutter  ",
-  },
-  {
     projectName: "Solusi Tukang",
     projectDate: "December 2024",
     projectDescription:
@@ -44,69 +32,141 @@ const data: PortfolioCardProps[] = [
     type: "Flutter  ",
   },
   {
-    projectName: "Intima",
-    projectDate: "December 2024",
+    projectName: "HRIS",
+    projectDate: "February 2025",
     projectDescription:
-      "An app designed to help track employee of PT. Maelo Inti Trans delivery routes and movements, generate detailed reports, and manage item requests.",
-    image: "/images/logo_intima.png",
-    techStack: ["Flutter", "GETX", "HTTP"],
+      "Streamline employee management and HR-related processes. Developed user interfaces and integrated backend APIs to support digitalization of HR workflow.",
+    image: "",
+    techStack: ["React", "Next.js", "TypeScript", "REST API", "PRISMA"],
     githubLink: null,
     liveDemoLink: null,
     isNDA: true,
-    type: "Flutter  ",
+    type: "Web",
   },
   {
-    projectName: "EMS",
-    projectDate: "December 2024",
+    projectName: "Annual Strategy Planning Application",
+    projectDate: "August 2025",
     projectDescription:
-      "An app for  PT. atlantic alam industri to streamline internal budget loan requests, enabling quick submissions and approvals with automated workflows.",
-    image: "/images/logo_ems.png",
-    techStack: ["Flutter", "GETX", "HTTP"],
+      "An internal application developed to streamline the annual strategy planning process, replacing a previously manual workflow that took approximately three months with a more efficient process completed in one week. Focused on implementing application features, integrating backend APIs, and improving the overall planning workflow.",
+    image: "",
+    techStack: [
+      "React",
+      "Next.js",
+      "TypeScript",
+      "REST API",
+      "PRISMA",
+      "Python",
+      "XLSX",
+    ],
     githubLink: null,
     liveDemoLink: null,
     isNDA: true,
-    type: "Flutter  ",
+    type: "Web",
   },
+
   {
-    projectName: "Solusi Pos",
-    projectDate: "December 2024",
+    projectName: "Schedule Module",
+    projectDate: "August 2026",
     projectDescription:
-      "Application still in development to help ratail to process POS.",
-    image: "/images/solusi_pos.png",
-    techStack: ["Flutter", "Riverpod"],
+      "An internal scheduling system to manage complex scheduling workflows and concurrent user operations. Focused on backend development, implementing concurrency control and idempotency mechanisms to prevent scheduling conflicts, maintain data consistency, and ensure reliable request processing.",
+    image: "",
+    techStack: [
+      "TypeScript",
+      "NestJS",
+      "GraphQL",
+      "PostgreSQL",
+      "Prisma",
+      "Redis",
+      "RabbitMQ",
+      "Microservices",
+      "DataLoader",
+    ],
     githubLink: null,
     liveDemoLink: null,
     isNDA: true,
-    type: "Flutter  ",
+    type: "Backend",
   },
 ];
 
+
 const skills: SkillsCard[] = [
+  // Backend
   {
-    altName: "Flutter",
-    image: "icon/icon_flutter.png",
+    altName: "TypeScript",
+    image: "https://www.vectorlogo.zone/logos/typescriptlang/typescriptlang-icon.svg",
   },
   {
-    altName: "Typescript",
-    image: "icon/typescript.png",
+    altName: "Node.js",
+    image: "https://www.vectorlogo.zone/logos/nodejs/nodejs-icon.svg",
   },
   {
-    altName: "React",
-    image: "icon/React-icon.svg.png",
+    altName: "NestJS",
+    image: "https://www.vectorlogo.zone/logos/nestjs/nestjs-icon.svg",
+  },
+  {
+    altName: "PostgreSQL",
+    image: "https://www.vectorlogo.zone/logos/postgresql/postgresql-icon.svg",
   },
   {
     altName: "Prisma",
     image: "icon/prisma.png",
   },
   {
-    altName: "Rust",
-    image: "icon/rust.png",
+    altName: "Redis",
+    image: "https://www.vectorlogo.zone/logos/redis/redis-icon.svg",
+  },
+  {
+    altName: "GraphQL",
+    image: "https://www.vectorlogo.zone/logos/graphql/graphql-icon.svg",
+  },
+  {
+    altName: "RabbitMQ",
+    image: "icon/rabbitmq.svg",
+  },
+
+  // Frontend
+  {
+    altName: "React",
+    image: "https://www.vectorlogo.zone/logos/reactjs/reactjs-icon.svg",
+  },
+  {
+    altName: "Next.js",
+    image: "https://www.vectorlogo.zone/logos/nextjs/nextjs-icon.svg",
+  },
+
+  // Mobile
+  {
+    altName: "Flutter",
+    image: "icon/icon_flutter.png",
+  },
+  {
+    altName: "Dart",
+    image: "https://www.vectorlogo.zone/logos/dartlang/dartlang-icon.svg",
+  },
+
+  // Infrastructure & Tools
+  {
+    altName: "AWS",
+    image: "https://www.vectorlogo.zone/logos/amazon/amazon-icon.svg",
+  },
+  {
+    altName: "Docker",
+    image: "https://www.vectorlogo.zone/logos/docker/docker-icon.svg",
+  },
+  {
+    altName: "GitHub Actions",
+    image: "icon/gitHub-actions.svg",
   },
   {
     altName: "Python",
     image: "icon/python.png",
   },
+  {
+    altName: "Rust",
+    image: "icon/rust.png",
+  },
 ];
+
 
 export default function Home() {
   return (
@@ -124,7 +184,7 @@ export default function Home() {
           <Box alignItems="center" justifyContent="center">
             <Typography variant="h6">FIKRI IRSYAD! ✌️</Typography>
             <Typography variant="body2" color="error">
-              FRONT-END DEVELOPER
+              FULLSTACK DEVELOPER
             </Typography>
 
             <Typography variant="h6">Social Links</Typography>
@@ -185,25 +245,19 @@ export default function Home() {
               INTRODUCTION
             </Typography>
 
+
             <Typography>
-              A graduate in <span style={{ color: "green" }}>Informatics</span>{" "}
-              with <span style={{ color: "green" }}>one year</span> of
-              experience as a Frontend Developer using
-              <span style={{ color: "green" }}> Dart</span> and
-              <span style={{ color: "green" }}> Flutter</span>
-              ,skilled in developing efficient and user-friendly mobile
-              applications. Focused on cross-team collaboration with backend and
-              UI/UX teams to create responsive UI. Experienced in
-              <span style={{ color: "red" }}> Firebase </span>
-              notifications, uploading signed images to{" "}
-              <span style={{ color: "red" }}>Google Cloud</span>, and
-              integrating
-              <span style={{ color: "red" }}> Google Maps and Geocoding</span>.
-              hand on with <span style={{ color: "green" }}> GetX</span>,
-              <span style={{ color: "green" }}> Riverpod </span>, &{" "}
-              <span style={{ color: "green" }}> Provider </span>
-              Proficient in slicing Figma designs and transforming them into
-              consistent themes and typography to enhance user experience.
+              Computer Science graduate with{" "}
+              <span style={{ color: "green" }}>3 years of professional software development experience</span>,
+              specializing in Backend Development. Experienced in building and
+              optimizing backend systems, designing scalable application
+              architectures, and improving database performance. Hands-on
+              experience with technologies including{" "}
+              <span style={{ color: "green" }}>TypeScript, NestJS, Prisma, SQL, React, and Next.js</span>,
+              with <span style={{ color: "green" }}>Go</span> as a hobby.
+              Demonstrated ability to optimize system performance, reduce API
+              response times, and improve infrastructure efficiency.
+              Passionate about backend engineering and system design.
             </Typography>
           </div>
 
@@ -225,7 +279,7 @@ export default function Home() {
               <BasicCard
                 title={"Solusi Cipta Media (Internship)"}
                 description={
-                  "As an intern, I have had the opportunity to learn a great deal, particularly when it comes to structuring Flutter applications and utilizing GetX for state management. Throughout my experience, I have gained a deeper understanding of Flutter's widget-based architecture, and I’ve learned how to efficiently organize and structure the code to ensure scalability and maintainability."
+                  "Flutter Developer responsible for developing mobile applications while building a strong foundation in Flutter and Dart. Focused on implementing user-centric interfaces, improving user experience, and understanding application architecture. \nDeveloped practical knowledge of object-oriented programming concepts, including polymorphism, with an emphasis on creating modular, reusable, and maintainable components."
                 }
                 subtitle={"March 2024 -  June 2024"}
                 listString={["icon/icon_flutter.png", "icon/getx.png"]}
@@ -233,18 +287,23 @@ export default function Home() {
               <BasicCard
                 title={"Solusi Cipta Media"}
                 description={
-                  "In addition to working with Flutter, I gained experience managing development dev servers using cPanel, where I handled domains, databases, and troubleshooting. I also help maintained CI/CD pipelines with tools GitHub Actions, automating build, lint testing, and deployment processes. Furthermore, I learned Nextjs with TypeScript and React, improving my skills in writing clean, maintainable code and managing state in web applications. This experience broadened my ability to develop both mobile and web applications efficiently."
+                  "Transitioned into full-stack development, working primarily with Next.js, React, and TypeScript to build web applications and deliver solutions based on business and user requirements.\nFocused on solving problems through practical technology choices, combining different tools and technologies to develop cost-effective solutions and reduce dependency on expensive enterprise platforms.                Also gained hands-on experience with server management and deployment processes, working with cPanel, managing domains and databases, troubleshooting server-related issues, and maintaining CI/CD pipelines using GitHub Actions.\nExpanded technical experience across frontend development, backend integration, database management, and basic infrastructure operations."
                 }
-                subtitle={"July 2024 -  January 2025"}
+                subtitle={"July 2024 -  December 2025"}
                 listString={[
-                  "icon/icon_flutter.png",
-                  "icon/getx.png",
                   "icon/typescript.png",
                   "icon/React-icon.svg.png",
                   "icon/prisma.png",
-                  "icon/riverpod.png",
                   "icon/termius-logo.png",
                 ]}
+              />
+              <BasicCard
+                title={"RATA.ID"}
+                description={
+                  "Worked on backend-focused projects involving complex business requirements and system workflows. Responsible for analyzing user and business requirements, translating them into backend solutions, and developing scalable and maintainable services.\nFocused on backend architecture, database design, system optimization, and improving application performance while handling more complex business logic and data interactions. \nGained deeper hands-on experience in designing and maintaining backend systems using modern TypeScript-based technologies."
+                }
+                subtitle={"December 2025 -  Now"}
+                listString={["icon/typescript.png", "icon/prisma.png","https://www.vectorlogo.zone/logos/nestjs/nestjs-icon.svg","https://www.vectorlogo.zone/logos/graphql/graphql-icon.svg"]}
               />
             </Box>
           </Box>
